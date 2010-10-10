@@ -12,17 +12,22 @@
 <% end %>
 
 <p id="notice"><%= notice %></p>
-
 <p>
-  <b>Nombre:</b>
-  <%= @service.nombre %>
+  <b>
+  <%= @service.nombre %></b>
 </p>
+
+<%= image_tag @service.logo.url(:medium), :class => "logo" %>
+
 
 <p>
   <b>Descripcion:</b>
   <%= @service.descripcion %>
 </p>
 
+<p>
+  <b>Galeria:</b>
+</p>
 <a href="/images/fullscreen/1.jpg" rel="prettyPhoto[pp_gal]" title="You can add caption to pictures."><img src="/images/thumbnails/t_1.jpg" width="60" height="60" alt="Red round shape" /></a>
 
 <a href="/images/fullscreen/2.jpg" rel="prettyPhoto[pp_gal]"><img src="/images/thumbnails/t_2.jpg" width="60" height="60" alt="Nice building" /></a>
