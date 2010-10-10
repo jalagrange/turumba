@@ -1,0 +1,39 @@
+<%content_for :head do%>
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+		
+		$(document).ready(function(){
+					$("a[rel^='prettyPhoto']").prettyPhoto({theme:'facebook', slideshow:5000, autoplay_slideshow:false});
+				});
+		
+	});
+</script>
+
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @service.nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @service.descripcion %>
+</p>
+
+<a href="/images/fullscreen/1.jpg" rel="prettyPhoto[pp_gal]" title="You can add caption to pictures."><img src="/images/thumbnails/t_1.jpg" width="60" height="60" alt="Red round shape" /></a>
+
+<a href="/images/fullscreen/2.jpg" rel="prettyPhoto[pp_gal]"><img src="/images/thumbnails/t_2.jpg" width="60" height="60" alt="Nice building" /></a>
+
+<a href="/images/fullscreen/3.jpg" rel="prettyPhoto[pp_gal]"><img src="/images/thumbnails/t_3.jpg" width="60" height="60" alt="Fire!" /></a>
+
+<a href="/images/fullscreen/4.jpg" rel="prettyPhoto[pp_gal]"><img src="/images/thumbnails/t_4.jpg" width="60" height="60" alt="Rock climbing" /></a>
+
+<a href="/images/fullscreen/5.jpg" rel="prettyPhoto[pp_gal]"><img src="/images/thumbnails/t_5.jpg" width="60" height="60" alt="Fly kite, fly!" /></a>
+
+<a href="http://www.youtube.com/watch?v=N3FJuKjS5uY" rel="prettyPhoto[pp_gal]" title=""><img src="/images/thumbnails/flash-logo.png" alt="YouTube" width="60" /></a>
+
+<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Back', services_path %>
