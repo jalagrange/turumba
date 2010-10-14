@@ -1,9 +1,9 @@
-<h1>Listing services</h1>
+<h1>Servicios</h1>
 
 <table>
   <tr>
     <th>Nombre</th>
-    <th>Descripcion</th>
+    <th>Descripción</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,15 +12,13 @@
 <% @services.each do |service| %>
   <tr>
 	<td><%= image_tag service.logo.url(:thumb) %></td>
-    <td><%= service.nombre %></td>
-    <td><%= service.descripcion %></td>
-    <td><%= link_to 'Show', service %></td>
-    <td><%= link_to 'Edit', edit_service_path(service) %></td>
-    <td><%= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to service.nombre, service %></td>
+    <td><%= link_to 'Editar', edit_service_path(service) %></td>
+    <td><%= link_to 'Eliminar', service, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Service', new_service_path %>
+<%= link_to 'Nuevo Servicio', new_service_path %>
