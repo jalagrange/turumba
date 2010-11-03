@@ -5,8 +5,6 @@ gem 'rails', '3.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -31,3 +29,4 @@ gem 'mysql2'
 
 gem 'paperclip'
 gem 'jquery-rails'
+gem "mysql2", ">= 0.2.6"
