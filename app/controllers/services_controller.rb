@@ -56,6 +56,7 @@ class ServicesController < ApplicationController
   # PUT /services/1
   # PUT /services/1.xml
   def update
+    params[:service][:category_ids] ||= []
     @service = Service.find(params[:id])
 
     respond_to do |format|
