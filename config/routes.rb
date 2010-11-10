@@ -2,6 +2,8 @@ Turumba::Application.routes.draw do
   resources :categories
 
   resources :services
+  
+  root :to => 'services#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
