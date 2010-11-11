@@ -22,7 +22,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: turumba_test
+  database: projectfedena_v2.0_test
   pool: 5
   username: root
   password: "12345"
@@ -32,7 +32,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: turumba_production
+  database: projectfedena_v2.0_production
   pool: 5
   username: root
   password: "12345"
