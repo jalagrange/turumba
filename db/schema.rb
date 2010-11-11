@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101110202134) do
+ActiveRecord::Schema.define(:version => 20101111051346) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(:version => 20101110202134) do
   end
 
   create_table "categories_services", :id => false, :force => true do |t|
+    t.integer "id",          :null => false
     t.integer "category_id"
     t.integer "service_id"
-    t.integer "id",          :null => false
   end
 
   add_index "categories_services", ["id"], :name => "id"
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(:version => 20101110202134) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "fk_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_assetable_type"
   add_index "ckeditor_assets", ["user_id"], :name => "fk_user"
+
+  create_table "images", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "data_file_name"
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.datetime "data_updated_at"
+    t.integer  "service_id"
+  end
 
   create_table "services", :force => true do |t|
     t.string   "nombre"

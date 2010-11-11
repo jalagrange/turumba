@@ -32,6 +32,9 @@
 	<%= category.name%>
 	<% end %>
   </div>
+  <%=f.fields_for :images do |builder|%>
+	<%=render "image_fields", :f =>builder%>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

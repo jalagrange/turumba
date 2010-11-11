@@ -28,15 +28,9 @@
 <p>
   <b>Galeria:</b>
 </p>
-<a href="/images/fullscreen/1.jpg" rel="prettyPhoto[pp_gal]" title="You can add caption to pictures."><img src="/images/thumbnails/t_1.jpg" width="60" height="60" alt="Red round shape" /></a>
-
-<a href="/images/fullscreen/2.jpg" rel="prettyPhoto[pp_gal]"><img src="/images/thumbnails/t_2.jpg" width="60" height="60" alt="Nice building" /></a>
-
-<a href="/images/fullscreen/3.jpg" rel="prettyPhoto[pp_gal]"><img src="/images/thumbnails/t_3.jpg" width="60" height="60" alt="Fire!" /></a>
-
-<a href="/images/fullscreen/4.jpg" rel="prettyPhoto[pp_gal]"><img src="/images/thumbnails/t_4.jpg" width="60" height="60" alt="Rock climbing" /></a>
-
-<a href="/images/fullscreen/5.jpg" rel="prettyPhoto[pp_gal]"><img src="/images/thumbnails/t_5.jpg" width="60" height="60" alt="Fly kite, fly!" /></a>
+<% @service.images.each do |image|%>
+<%=link_to(image_tag(image.data.url(:thumb)), image.data.url, :rel=>"prettyPhoto[pp_gal]") %> 
+<%end%>
 
 <a href="http://www.youtube.com/watch?v=_snBMLwnWcM" rel="prettyPhoto[pp_gal]" title=""><img src="/images/thumbnails/flash-logo.png" alt="YouTube" width="60" /></a>
 
