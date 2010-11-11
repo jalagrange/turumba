@@ -31,8 +31,7 @@
 <% @service.images.each do |image|%>
 <%=link_to(image_tag(image.data.url(:thumb)), image.data.url, :rel=>"prettyPhoto[pp_gal]") %> 
 <%end%>
-
-<a href="http://www.youtube.com/watch?v=_snBMLwnWcM" rel="prettyPhoto[pp_gal]" title=""><img src="/images/thumbnails/flash-logo.png" alt="YouTube" width="60" /></a>
+<a href="http://www.youtube.com/watch?v=_snBMLwnWcM" rel="prettyPhoto[pp_gal]" title=""><img src="http://img.youtube.com/vi/_snBMLwnWcM/0.jpg" alt="YouTube" width="60" /></a>
 
 <%= link_to 'Editar', edit_service_path(@service) %> |
 <%= link_to 'Atras', services_path %>

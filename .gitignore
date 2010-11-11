@@ -6,3 +6,4 @@ config/database.yml
 Gemfile.lock
 public/ckeditor_assets/*
 public/system/logos/*
+public/system/*
