@@ -30,3 +30,4 @@ gem 'rails', '3.0.0'
 gem 'paperclip'
 gem 'jquery-rails'
 gem "mysql2", ">= 0.2.6"
+gem 'ckeditor', '>= 3.4.2.pre'
