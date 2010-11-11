@@ -25,7 +25,6 @@ class ServicesController < ApplicationController
   # GET /services/new.xml
   def new
     @service = Service.new
-	3.times {@service.images.build}
 
     respond_to do |format|
       format.html # new.html.erb

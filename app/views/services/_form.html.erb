@@ -35,6 +35,7 @@
   <%=f.fields_for :images do |builder|%>
 	<%=render "image_fields", :f =>builder%>
   <% end %>
+  <p><%= link_to_add_fields "Add Image", f, :images %></p>
   <div class="actions">
     <%= f.submit %>
   </div>
