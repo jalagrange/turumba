@@ -32,6 +32,11 @@
 	<%= category.name%>
 	<% end %>
   </div>
+  
+  <%@service.images.each do |img|%>
+  <%= image_tag(img.data.url(:thumb))%>
+  <%end %>
+  
   <%=f.fields_for :images do |builder|%>
 	<%=render "image_fields", :f =>builder%>
   <% end %>
