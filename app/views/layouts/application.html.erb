@@ -11,10 +11,12 @@
 </head>
 <body class="home blog">
 
-
 	<%= render :partial => "layouts/navbar" %>
 
 	<div id="main">
+		<% flash.each do |name, msg|%>
+			<%= content_tag :div, msg, :id=> "flash_#{name}"%>
+		<% end %>
 		<div id="container">
 			<div id="content">
 
