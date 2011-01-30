@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
 
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -32,3 +33,4 @@ gem 'jquery-rails'
 gem "mysql2", ">= 0.2.6"
 gem 'ckeditor', ' 3.4.3.pre'
 gem "bcrypt-ruby", :require => "bcrypt"
+gem "devise"

@@ -1,10 +1,7 @@
 Turumba::Application.routes.draw do
   
-  get "login" => "sessions#new", :as => "log_in"
-  get "signup" => "users#new", :as => "sign_up"
-  get "logout" => "sessions#destroy", :as => "log_out"
-  resources :sessions
-  resources :users
+  devise_for :users
+
   resources :categories
   resources :services
   
