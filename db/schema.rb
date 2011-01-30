@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(:version => 20101111051346) do
   end
 
   create_table "categories_services", :id => false, :force => true do |t|
+    t.integer "id",          :null => false
     t.integer "category_id"
     t.integer "service_id"
-    t.integer "id",          :null => false
   end
 
   add_index "categories_services", ["id"], :name => "id"

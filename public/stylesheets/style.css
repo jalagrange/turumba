@@ -814,7 +814,7 @@ form.form label {
 }
 
 #content img.logo {
-	margin: -100px 200px 0px 420px;
+	margin: -0px 200px 0px -20px;
 	max-width: 640px;
 }
 
