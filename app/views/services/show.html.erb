@@ -2,9 +2,8 @@
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function(){
 		
-		$(document).ready(function(){
-					$("a[rel^='prettyPhoto']").prettyPhoto({theme:'facebook', slideshow:5000, autoplay_slideshow:false, overlay_gallery: false});
-				});
+	$("a[rel^='prettyPhoto']").prettyPhoto({theme:'facebook', slideshow:5000, autoplay_slideshow:false, overlay_gallery: false});
+
 		
 	});
 </script>
@@ -32,6 +31,5 @@
 <%=link_to(image_tag(image.data.url(:thumb)), image.data.url, :rel=>"prettyPhoto[pp_gal]") %> 
 <%end%>
 <a href="http://www.youtube.com/watch?v=_snBMLwnWcM" rel="prettyPhoto[pp_gal]" title=""><img src="http://img.youtube.com/vi/_snBMLwnWcM/0.jpg" alt="YouTube" width="60" /></a>
-
 <%= link_to 'Editar', edit_service_path(@service) %> |
 <%= link_to 'Atras', services_path %>
