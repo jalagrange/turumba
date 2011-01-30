@@ -1,6 +1,8 @@
 class ServicesController < ApplicationController
   # GET /services
   # GET /services.xml
+  
+  filter_resource_access
   def index
     @services = Service.all
 

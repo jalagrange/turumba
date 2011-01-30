@@ -34,3 +34,4 @@ gem "mysql2", ">= 0.2.6"
 gem 'ckeditor', ' 3.4.3.pre'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "devise"
+gem "declarative_authorization", ">= 0.5.2"

@@ -1,4 +1,14 @@
 <div id="wrapper" class="hfeed">
+<div id="user_nav">
+		<% if user_signed_in?%>
+		Logged in as <%= current_user.email%>
+		<%= link_to "Log Out", destroy_user_session_path%>
+		<% else %>
+		<%= link_to "Sign up", new_user_registration_path %>
+		<%= link_to "log in", new_user_session_path %>
+		<% end %>
+	</div>
+
 	<div id="header">
 		<div id="masthead">
 			<div id="branding">
