@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Turumba</title>
+	<%= stylesheet_link_tag :all %>
+	<%= javascript_include_tag :defaults %>
+	<%= stylesheet_link_tag 'css/prettyPhoto', 'style' %>
+	<%= javascript_include_tag "prettyPhoto/js/jquery.prettyPhoto"%>
+	<%= csrf_meta_tag %>
+	<%= yield :head %>
+</head>
+<body class="home blog">
+
+	<%= render :partial => "layouts/navbar" %>
+
+	<div id="main">
+		<% flash.each do |name, msg|%>
+			<%= content_tag :div, msg, :id=> "flash_#{name}"%>
+		<% end %>
+		<div id="container">
+			<div id="content">
+
+			<%= yield %>
+
+		</div>	
+	</div>
+	<div id="primary" class="widget-area">
+	<%= yield  :widget%>
+	<%=link_to  image_tag("p.png",:size => "200x589"), services_url()%>
+	
+</div>
+</div>
+
+<div id="footer">
+	<div id="colophon">
+		<div id="site-info">
+			
+		</div>
+		<div id ="site-generator">
+			<p>Turumba.com</p>
+		</div>
+	</div>
+</div>
+
+</div>
+
+</body>
+</body>
+</html>

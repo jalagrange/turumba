@@ -26,13 +26,10 @@ ActiveRecord::Schema.define(:version => 20110130222924) do
     t.datetime "updated_at"
   end
 
-  create_table "categories_services", :id => false, :force => true do |t|
-    t.integer "id",          :null => false
+  create_table "categories_services", :force => true do |t|
     t.integer "category_id"
     t.integer "service_id"
   end
-
-  add_index "categories_services", ["id"], :name => "id"
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                                 :null => false

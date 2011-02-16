@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [52.37912, 4.82051, "Best Western Blue Square Hotel"];
+hotels[hotelcount++] = [52.3812913, 4.8212849, "Nieuw Slotania"];
+hotels[hotelcount++] = [52.38187, 4.82152, "Hotel Nieuw Slotania amsterdam"];
+hotels[hotelcount++] = [52.3562686675991, 4.84187627950561, "Bastion Centrum Zuidwest"];
+hotels[hotelcount++] = [52.35631, 4.84188, "Bastion Hotel Amsterdam Centrum- Zuidwest"];
+hotels[hotelcount++] = [52.34857, 4.84336, "HEM Hotel Amsterdam"];
+hotels[hotelcount++] = [52.35743, 4.84497, "Golden Tulip Amsterdam Fashion"];
+hotels[hotelcount++] = [52.3494709809178, 4.84767436981201, "Las Vegas"];
+hotels[hotelcount++] = [52.35793, 4.85065, "Belfort Hotel"];

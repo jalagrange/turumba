@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [25.75694, -79.27686, "Bimini Bay Resort and Marina"];
+hotels[hotelcount++] = [24.74728, -77.81042, "Small Hope Bay Lodge All Inclusive"];
+hotels[hotelcount++] = [24.64808, -77.72674, "Kamalame Cay"];
+hotels[hotelcount++] = [24.21028, -77.59599, "Emerald Palms Hotel"];
+hotels[hotelcount++] = [25.06199, -77.466, "Orange Hill Beach Inn"];
+hotels[hotelcount++] = [25.0743097798706, -77.4388344954635, "Blue Water Resort"];
+hotels[hotelcount++] = [25.07554, -77.43201, "Wyndham Nassau Resort"];
+hotels[hotelcount++] = [25.074, -77.419, "Breezes Resort Bahamas All Inclusive"];
+hotels[hotelcount++] = [25.07121, -77.41662, "Casuarinas Hotel"];

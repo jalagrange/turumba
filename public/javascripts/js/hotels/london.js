@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [51.49673, -0.16754, "Egerton House Hotel"];
+hotels[hotelcount++] = [51.49287, -0.16718, "Chelsea Cloisters"];
+hotels[hotelcount++] = [51.49804, -0.16439, "Knightsbridge Hotel"];
+hotels[hotelcount++] = [51.49794, -0.16412, "The Claverley Hotel"];
+hotels[hotelcount++] = [51.4977958511986, -0.164063798566138, "The Beaufort"];
+hotels[hotelcount++] = [51.49781, -0.16406, "Beaufort Hotel"];
+hotels[hotelcount++] = [51.5135326070463, -0.163037202457586, "Parkwood"];
+hotels[hotelcount++] = [51.51334, -0.16295, "Parkwood at Marble Arch - Guest House"];
+hotels[hotelcount++] = [51.50166, -0.16243, "Knightsbridge Green Hotel"];

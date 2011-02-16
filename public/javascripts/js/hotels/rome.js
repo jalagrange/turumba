@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [41.894382538526, 12.471827240474, "Capo di Ferro"];
+hotels[hotelcount++] = [41.89311, 12.47186, "Ponte Sisto Hotel"];
+hotels[hotelcount++] = [41.8933408518409, 12.4720573425293, "Residenza Storica"];
+hotels[hotelcount++] = [41.8933626, 12.4721164, "Pettinary Village"];
+hotels[hotelcount++] = [41.8953807, 12.4721243, "R/034 Campo de Fiori"];
+hotels[hotelcount++] = [41.8966501613304, 12.4721960706891, "R/250 Eagle"];
+hotels[hotelcount++] = [41.8973578994278, 12.4724221229553, "Residenza Navona First"];
+hotels[hotelcount++] = [41.8970804632481, 12.4726519858162, "Residenza San Pantaleo"];
+hotels[hotelcount++] = [41.8950792178213, 12.4726972358195, "Campo de' Fiori"];

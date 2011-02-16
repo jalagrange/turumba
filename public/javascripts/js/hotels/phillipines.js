@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [9.742, 118.7355, "Microtel Puerto Princesa"];
+hotels[hotelcount++] = [12.0, 120.2, "Kalamayan Inn"];
+hotels[hotelcount++] = [16.0704, 120.36472, "Leisure Coast Resort"];
+hotels[hotelcount++] = [15.1829854133897, 120.550317764282, "Holiday Inn Clark"];
+hotels[hotelcount++] = [15.18421, 120.5623, "Holiday Inn Resort Clark Field"];
+hotels[hotelcount++] = [16.41299, 120.59806, "Microtel Inn Suites Baguio"];
+hotels[hotelcount++] = [15.143, 120.6045, "Angeles Condotel Resort"];
+hotels[hotelcount++] = [15.43355, 120.64842, "Microtel Inn Suites Luisita"];
+hotels[hotelcount++] = [11.35843, 120.72642, "Amanpulo"];

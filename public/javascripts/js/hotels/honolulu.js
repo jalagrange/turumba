@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [21.4602716646198, -158.206701858143, "Makaha Resort and Golf Club"];
+hotels[hotelcount++] = [21.47244, -158.1989, "Makaha Resort Golf Club"];
+hotels[hotelcount++] = [21.342, -158.12651, "JW Marriott Ihilani Resort and Spa at Ko Olina"];
+hotels[hotelcount++] = [21.33116, -158.12016, "Ko Olina Beach Villas Resort"];
+hotels[hotelcount++] = [21.6442, -157.9225, "Laie Inn"];
+hotels[hotelcount++] = [21.33825, -157.92213, "OHANA Honolulu Airport Hotel"];
+hotels[hotelcount++] = [21.33775, -157.91866, "Best Western The Plaza Hotel"];
+hotels[hotelcount++] = [21.3364881462916, -157.912730516266, "Best Western Airport Plaza Hotel"];
+hotels[hotelcount++] = [21.33275, -157.90051, "Castle Pacific Marina Inn Airport Hotel"];

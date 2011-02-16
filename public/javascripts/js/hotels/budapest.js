@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [47.50227, 18.96711, "Hotel Normafa"];
+hotels[hotelcount++] = [47.522, 18.97, "Europa Hotels and Congress Centre"];
+hotels[hotelcount++] = [47.52161, 18.97018, "Europa Hotels  Congress Center"];
+hotels[hotelcount++] = [47.51002, 18.9786, "Hotel Bobbio"];
+hotels[hotelcount++] = [47.47906, 18.98801, "Helios Hotel Pension"];
+hotels[hotelcount++] = [47.5035, 18.98893, "Europa Hotels & Congress Center - Superior"];
+hotels[hotelcount++] = [47.479, 18.989, "Helios Hotel & Pension"];
+hotels[hotelcount++] = [47.48412, 18.989, "Budai Hotel"];
+hotels[hotelcount++] = [47.48805, 18.99297, "Hotel Molnar"];

@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [25.25, 55.2666, "Savoy Residence"];
+hotels[hotelcount++] = [25.2372, 55.26771, "Dubai Marine Beach Resort"];
+hotels[hotelcount++] = [25.24131, 55.27033, "Holiday Inn Express Dubai Jumeirah"];
+hotels[hotelcount++] = [25.2361559776038, 55.2735900878906, "Jumeira Rotana Dubai"];
+hotels[hotelcount++] = [25.23814, 55.27363, "Jumeira Rotana - Dubai"];
+hotels[hotelcount++] = [25.24869, 55.2795, "Gold Swiss-Belhotel Dubai"];
+hotels[hotelcount++] = [25.23637, 55.28007, "Rydges Plaza Dubai"];
+hotels[hotelcount++] = [25.2490433437552, 55.2811431884766, "Rose Garden Hotel Apartment Barsha"];
+hotels[hotelcount++] = [25.25112, 55.28162, "The Country Club Hotel"];

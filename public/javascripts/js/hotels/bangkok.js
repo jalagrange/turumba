@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [13.7193742955836, 100.479583740234, "P2 Boutique Hotel"];
+hotels[hotelcount++] = [13.7802351429142, 100.48267364502, "Shanghai Mansion"];
+hotels[hotelcount++] = [13.7777, 100.48318, "The Royal City Hotel"];
+hotels[hotelcount++] = [13.7603528940226, 100.493938922882, "Sawasdee Krungthep Inn"];
+hotels[hotelcount++] = [13.76039, 100.49403, "Sawasdee Smile Inn"];
+hotels[hotelcount++] = [13.76272, 100.49434, "Navalai River Resort"];
+hotels[hotelcount++] = [13.72421, 100.49552, "Aiya Residence & Sport Club"];
+hotels[hotelcount++] = [13.76212, 100.496, "Sleep With Inn"];
+hotels[hotelcount++] = [13.760123633915, 100.496878623962, "Sleep Withinn"];

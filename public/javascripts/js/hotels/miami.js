@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [25.80969, -80.32526, "Courtyard by Marriott Miami Airport West/Doral"];
+hotels[hotelcount++] = [25.81006, -80.32526, "Fairfield Inn by Marriott Miami Airport West/Doral Area"];
+hotels[hotelcount++] = [25.80807, -80.32525, "Hampton Inn Miami-Airport West"];
+hotels[hotelcount++] = [25.79687, -80.32315, "Extended Stay Deluxe Miami - Airport - Doral"];
+hotels[hotelcount++] = [25.80799, -80.31767, "Hilton Garden Inn Miami Airport West"];
+hotels[hotelcount++] = [25.80746, -80.31717, "Homewood Suites by Hilton Miami Airport West"];
+hotels[hotelcount++] = [25.80967, -80.31689, "La Quinta Inn Miami Airport North"];
+hotels[hotelcount++] = [25.78115, -80.31298, "Days Inn - Miami International Airport"];
+hotels[hotelcount++] = [25.77729, -80.31297, "Doubletree Miami Mart Airport Hotel"];

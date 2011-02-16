@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [30.06245, 31.20549, "Pharaoh Egypt Hotel"];
+hotels[hotelcount++] = [30.05918, 31.2057, "Al Nabila Hotel"];
+hotels[hotelcount++] = [30.03586, 31.21245, "Safir Hotel Cairo"];
+hotels[hotelcount++] = [30.02838, 31.21254, "Four Seasons Cairo 1 St Residenc"];
+hotels[hotelcount++] = [30.0320771601895, 31.2142181396484, "Pyramisa Suites Hotel & Casino - Cairo"];
+hotels[hotelcount++] = [30.06616, 31.21453, "Golden Tulip Flamenco"];
+hotels[hotelcount++] = [30.06627, 31.21876, "President Hotel"];
+hotels[hotelcount++] = [30.04142, 31.21901, "Pharaohs Doki Hotel Cairo"];
+hotels[hotelcount++] = [30.07209, 31.21941, "Om Kolthoom Hotel"];

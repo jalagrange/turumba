@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [19.3813, -81.41047, "Silver Sands Condominiums"];
+hotels[hotelcount++] = [19.38936, -81.40448, "Cobalt Coast Dive Resort"];
+hotels[hotelcount++] = [19.28587, -81.38997, "Sunset House"];
+hotels[hotelcount++] = [19.31113, -81.38523, "George Town Villas"];
+hotels[hotelcount++] = [19.31231, -81.3852, "Grandview Condominiums"];
+hotels[hotelcount++] = [19.39534, -81.38502, "Villas Pappagallo"];
+hotels[hotelcount++] = [19.31639, -81.38325, "Seven Mile Beach Resort"];
+hotels[hotelcount++] = [19.31767, -81.38282, "Grand Cayman Marriott Beach Resort"];
+hotels[hotelcount++] = [19.305, -81.38262, "Coral Sands"];

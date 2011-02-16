@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [2.72664, 101.73189, "Pan Pacific Kuala Lumpur Airport"];
+hotels[hotelcount++] = [2.74081, 101.74658, "Concorde Inn - Kuala Lumpur International Airport"];
+hotels[hotelcount++] = [2.4785, 101.843, "Corus Paradise Resort Port Dick"];
+hotels[hotelcount++] = [2.43059, 101.85947, "Thistle Port Dickson"];
+hotels[hotelcount++] = [2.42086, 101.88435, "Duta Hacienda Riviera Resort"];
+hotels[hotelcount++] = [2.42128, 101.89156, "Duta Villas Golf Resort"];
+hotels[hotelcount++] = [2.7166, 101.9333, "Allson Klana Resort"];
+hotels[hotelcount++] = [2.43469, 102.13542, "D-Paradise Park Resort & Spa"];
+hotels[hotelcount++] = [2.19612686835598, 102.244938611984, "The Baba House"];

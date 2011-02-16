@@ -1,0 +1,10 @@
+var hotelcount = hotels.length;
+hotels[hotelcount++] = [50.08753, 14.39946, "Hotel Constans"];
+hotels[hotelcount++] = [50.08855, 14.40043, "Castle Steps"];
+hotels[hotelcount++] = [50.0876, 14.40096, "Alchymist Grand Hotel And Spa"];
+hotels[hotelcount++] = [50.0886666, 14.4009973, "Santini Residence"];
+hotels[hotelcount++] = [50.08854, 14.401, "Acc-Nifos SANTINI RESIDENCE"];
+hotels[hotelcount++] = [50.0889377698486, 14.4012844562531, "Thunovska 19"];
+hotels[hotelcount++] = [50.0886761924507, 14.4013166427612, "Rooms in Prague"];
+hotels[hotelcount++] = [50.0903557698415, 14.4013166427612, "Bed & Breakfast Castle Steps"];
+hotels[hotelcount++] = [50.0876165, 14.4025625, "Little Town Budget Hotel"];
