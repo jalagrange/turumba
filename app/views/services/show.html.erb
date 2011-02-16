@@ -11,25 +11,616 @@
 <% end %>
 
 <p id="notice"><%= notice %></p>
-<p>
-  <b>
-  <%= @service.nombre %></b>
-</p>
-
-<%= image_tag @service.logo.url(:medium), :class => "logo" %>
 
 
-<p>
-  <b>Descripción:</b>
-  <%= raw @service.descripcion %>
-</p>
 
-<p>
-  <b>Galeria:</b>
-</p>
-<% @service.images.each do |image|%>
-<%=link_to(image_tag(image.data.url(:thumb)), image.data.url, :rel=>"prettyPhoto[pp_gal]") %> 
-<%end%>
-<a href="http://www.youtube.com/watch?v=_snBMLwnWcM" rel="prettyPhoto[pp_gal]" title=""><img src="http://img.youtube.com/vi/_snBMLwnWcM/0.jpg" alt="YouTube" width="60" /></a>
-<%= link_to 'Editar', edit_service_path(@service) %> |
-<%= link_to 'Atras', services_path %>
+	<!-- Left column -->
+	<div class="grid_4" id="leftcolumn">
+		<!-- Search form -->
+		<div class="box radius">
+			<div class="padded">
+				<h2 class="headline radius"><b>Search</b> Hotels</h2>
+				<form name="booking" method="get" action="">
+					<!-- calendar image container -->
+					<span style="display:none;"><img class="trigger" id="trigger" alt="" src="img/blank.gif" /></span>
+					<fieldset class="radius">
+						<p>
+							<label class="" for="destination">Where are you going?</label><br/>
+							<input type="text" id="destination" class="full" value="" name="destination"/>
+						</p>
+						<p>
+							<label class="" for="startdate">Check in</label><br/>
+							<input type="text" id="startdate" class="" value="" name="startdate"/>
+							<input type="hidden" name="sd_timestamp" id="sd_timestamp" />
+						</p>
+						<p>
+							<label class="" for="enddate">Check out</label><br/>
+							<input type="text" id="enddate" class="" value="" name="enddate"/>
+							<input type="hidden" name="ed_timestamp" id="ed_timestamp" /> <span class="nights"></span>
+						</p>
+						<p><input type="checkbox" id="flexible" class="" value="1" name="flexible"/> <label class="choice" for="flexible">My dates are flexible</label></p>
+						<p>
+							<label class="" for="adults">How many people?</label><br/>
+							Adults <select id="adults" name="adults">
+								<option value="1" selected="selected">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+							Children <select id="children" name="children">
+								<option value="0" selected="selected">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</p>
+						<hr class="thin" />
+						<p>
+							<label class="" for="sortOrder">Sorted by</label><br/>
+							<select id="sortOrder" name="sortOrder">
+								<option title="Sort by price - low to high" value="PRICE_ASC">Price - low to high</option>
+								<option title="Sort by price - low to high" value="PRICE_DESC">Price - high to low</option>
+								<option title="Sort by star rating - high to low" value="STAR_RATING_DESC">Star rating - high to low</option>
+								<option title="Sort by star rating - low to high" value="STAR_RATING_ASC">Star rating - low to high</option>
+								<option title="Sort by guest rating" value="GUEST_RATING_ASC">Guest rating</option>
+							</select>
+						</p>
+						<input type="submit" class="btn btn-custom radius fr" value="Search &raquo;" />
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<!-- End of Search form -->
+		
+		<div class="">&nbsp;</div>
+		<!-- Around Hotel Content boxes -->
+		<div class="box radius">
+			<div class="padded">
+				<h2 class="gray radius">Around Hotel</h2>
+				<div class="content-box radius">
+					<div class="header">Attractions</div>
+					<div class="section">
+						<table class="full">
+							<tbody>
+								<tr>
+									<td>Water park</td>
+									<td class="tr"><small>3 km</small></td>
+								</tr>
+								<tr>
+									<td>Wild park</td>
+									<td class="tr"><small>4.5 km</small></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="content-box radius">
+					<div class="header">Shopping</div>
+					<div class="section">
+						<table class="full">
+							<tbody>
+								<tr>
+									<td>Mall</td>
+									<td class="tr"><small>1 km</small></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="content-box radius">
+					<div class="header">Transportation</div>
+					<div class="section">
+						<table class="full">
+							<tbody>
+								<tr>
+									<td>Train station</td>
+									<td class="tr"><small>1.5 km</small></td>
+								</tr>
+								<tr>
+									<td>Marina</td>
+									<td class="tr"><small>3 km</small></td>
+								</tr>
+								<tr>
+									<td>Airport</td>
+									<td class="tr"><small>31 km</small></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="content-box radius">
+					<div class="header">Nearby Hotels</div>
+					<div class="section">
+						<table class="full">
+							<tbody>
+								<tr>
+									<td><a href="#">Lorem Ipsum</a></td>
+									<td class="tr"><small>0.5 km</small></td>
+								</tr>
+								<tr>
+									<td><a href="#">Dolor</a></td>
+									<td class="tr"><small>0.7 km</small></td>
+								</tr>
+								<tr>
+									<td><a href="#">Sit Amet</a></td>
+									<td class="tr"><small>1.5 km</small></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End of Around Hotel Content boxes -->
+		
+		<!-- Share box -->
+		<div class="">&nbsp;</div>
+		<div class="box radius">
+			<div class="padded">
+				<h2 class="gray radius">Share</h2>
+				<p class="tc">
+					<a href="#" title="Share on Facebook"><%= image_tag "img/social/facebook.png"%></a>
+					<a href="#" title="Share on Twitter"><%= image_tag "img/social/twitter.png"%></a>
+					<a href="#" title="Share on MySpace"><%= image_tag "img/social/myspace.png"%></a>
+					<a href="#" title="Bookmark on Delicious"><%= image_tag "img/social/delicious.png"%></a>
+					<a href="#" title="Digg this"><%= image_tag "img/social/digg.png"%></a>
+					<a href="#" title="Submit to StumbleUpon"><%= image_tag "img/social/stumbleupon.png"%></a>
+					<a href="#" title="Share on Reddit"><%= image_tag "img/social/reddit.png"%></a>
+				</p>
+				<hr class="thin" />
+				<a href="#" onclick="$('#friend').fadeIn('fast'); return false;">Email this to a friend</a>
+				<form id="friend" method="post" action="" style="display:none;">
+					<fieldset class="radius">
+						<p>
+							<label class="" for="email1">Email (yours)</label><br/>
+							<input type="text" id="email1" class="full" value="" name="email1"/>
+						</p>
+						<p>
+							<label class="" for="email1">Email (friend's)</label><br/>
+							<input type="text" id="email2" class="full" value="" name="email2"/>
+						</p>
+						<p>
+							<label class="" for="msg">Message</label><br/>
+							<textarea id="msg" class="medium full" name="msg" rows="4" cols="20"></textarea>
+						</p>
+						<input type="submit" class="btn radius" value="Send Email" /> or <a href="#" onclick="$('#friend').fadeOut('fast'); return false;">close</a>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<!-- End of Share box -->
+		<div class="">&nbsp;</div>
+		
+		<!-- Guest Corner box -->
+		<div class="box radius">
+			<div class="padded">
+				<h2 class="gray radius">Guest Corner</h2>
+				<table class="full">
+					<tbody>						
+						<tr><td><a href="#">FAQ</a></td></tr>
+						<tr><td><a href="#">How to make a reservation?</a></td></tr>
+						<tr><td><a href="#">Additional information</a></td></tr>
+						<tr><td><a href="#">Payment options</a></td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- End of Guest Corner box -->
+		<div class="">&nbsp;</div>
+		
+	
+	</div>
+	<!-- End of Left column -->
+	
+	<!-- Right column -->	
+	<div class='grid_8 searchpanel'>		
+		<h1 class=""><%= @service.nombre %></h1>
+		<input type="submit" class="btn btn-custom radius fr" value="Book Now!" onclick="tabs.tabs('select', 0); Site.scroll_to_hash('#availability'); return false;" />
+		
+		<p><em>Address, City, Country</em></p>
+		<%= link_to 'Editar', edit_service_path(@service) %> |
+		<%= link_to 'Atras', services_path %>
+		<!-- Tabs -->
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Hotel Overview</a></li>
+				<li><a href="#tabs-2">Guest Reviews</a></li>
+				<li><a href="#maptab">Show on Map</a></li>
+			</ul>
+			<!-- Tab 1: Hotel Overview -->
+			<div id="tabs-1">
+				<div class="infopanel padded">
+					<span class="padded fl tc score"><b>8.40</b><br/><a href="#" onclick="tabs.tabs('select', 1); return false;"><small>32 reviews</small></a></span>
+					<p class="tj"><%= image_tag @service.logo.url(:medium), :class => "w12 big" %>
+						<%= raw @service.descripcion %>
+					
+					<div class="tc box padded">
+						<% @service.images.each do |image|%>
+						<%=link_to(image_tag(image.data.url(:thumb), :class=>"small"), image.data.url, :rel=>"gal", :class=>"nyroModal") %> 
+						<%end%>
+						<a href="http://www.youtube.com/watch?v=_snBMLwnWcM" rel="prettyPhoto[pp_gal]" title=""><img src="http://img.youtube.com/vi/_snBMLwnWcM/0.jpg" alt="YouTube" width="60" /></a>
+						<a href="img/hotels/room-1.jpg" class="nyroModal" title="Hotel Name" rel="gal"><img class="small" src="img/hotels/room-1t.jpg" alt="" /></a>
+						<a href="img/hotels/room-2.jpg" class="nyroModal" title="Hotel Name" rel="gal"><img class="small" src="img/hotels/room-2t.jpg" alt="" /></a>
+						<a href="img/hotels/room-3.jpg" class="nyroModal" title="Hotel Name" rel="gal"><img class="small" src="img/hotels/room-3t.jpg" alt="" /></a>
+						<a href="img/hotels/room-4.jpg" class="nyroModal" title="Hotel Name" rel="gal"><img class="small" src="img/hotels/room-4t.jpg" alt="" /></a>
+						<a href="img/hotels/room-5.jpg" class="nyroModal" title="Hotel Name" rel="gal"><img class="small" src="img/hotels/room-5t.jpg" alt="" /></a>
+					</div>
+					
+					<h6 id="availability">Availability</h6>
+					<div class="padded">
+						<p>Available rooms from Sat 24 Jul 2010, to Sun 25 Jul 2010 [ <a href="#" onclick="$('#changedates').show(); return false;">Change dates</a> ]</p>
+						<p>Most recent booking for this hotel was yesterday at 19:12 from Czech Republic</p>
+					</div>
+					<form name="changedates" id="changedates" method="get" action="" style="display:none;">
+						<fieldset class="box">
+							<p class="fl">
+								<label class="" for="startdate_change">Check-in</label><br/>
+								<input type="text" id="startdate_change" class="" value="" name="startdate_change"/>
+								<input type="hidden" name="sd_timestamp_change" id="sd_timestamp_change" />
+							</p>
+							<p class="fl">
+								<label class="" for="enddate_change">Check-out</label><br/>
+								<input type="text" id="enddate_change" class="" value="" name="enddate_change"/>
+								<input type="hidden" name="ed_timestamp_change" id="ed_timestamp_change" />
+							</p>
+							<p class="fl">
+								<label class="" for="number_change">Persons</label><br/>
+								<select id="number_change" name="number_change">
+									<option value="1" selected="selected">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+								</select>
+							</p>
+							<div class="clear"></div>
+							<input type="submit" class="btn radius small" value="Check availability" /> or <a href="#" onclick="$('#changedates').hide(); return false;">close</a>
+						</fieldset>
+					</form>
+					<table class="full box">
+						<tbody>
+							<tr>
+								<td class="w12 padded"><b class="big">Double bed room</b><br /><small><a href="#" onclick="$('#roomid_1').toggle(); return false;">Details &raquo;</a></small></td>
+								<td class="w12 padded tr">price from (person/day): <span class="price"><em>$29.99</em></span></td>
+							</tr>
+							<tr style="display:none;" id="roomid_1" class="oddbox">
+								<td class="padded" colspan="2">
+									<p class="small">
+										<a class="previewimg nyroModal" title="Hotel Name: Double bed room" href="img/hotels/room-1.jpg"><img src="img/hotels/room-1t.jpg" alt="" class="fl" /></a>
+										<b>Room Facilities:</b> Shower, Bath, Safety Deposit Box, TV, Telephone, Air Conditioning, Balcony, Radio, Toilet, Satellite TV, Cable TV, Tea/Coffee Maker, Hairdryer, Iron, Refrigerator, Work Desk, DVD Player, Microwave, Dishwasher, Washing Machine, Kitchen<br />
+										<b>Room Size:</b> 110 square metres<br />
+										<b>Bed Size(s):</b> 1 Extra large double bed
+									</p>
+									<hr class="thin" />
+									<b>Bed and breakfast (person/day)</b>
+									<table class="full roomlist">
+										<thead>
+											<tr>
+												<th class="tc w14">Persons</th>
+												<th class="tc w14">Days</th>
+												<th class="tc w12" colspan="2">Rate</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="tc">1</td>
+												<td class="tc">1</td>
+												<td class="tr"><span class="price">$49.99</span></td>
+												<td class="tl"><input type="submit" class="radius" value="Book" /></td>
+											</tr>
+											<tr>
+												<td class="tc">2</td>
+												<td class="tc">1</td>
+												<td class="tr"><span class="price">$41.99</span></td>
+												<td class="tl"><input type="submit" class="radius" value="Book" /></td>
+											</tr>
+										</tbody>
+									</table>
+									<b>Half board (person/day)</b>
+									<table class="full roomlist">
+										<thead>
+											<tr>
+												<th class="tc w14">Persons</th>
+												<th class="tc w14">Days</th>
+												<th class="tc w12" colspan="2">Rate</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="tc">1</td>
+												<td class="tc">1</td>
+												<td class="tr"><span class="price">$49.99</span></td>
+												<td class="tl"><input type="submit" class="radius" value="Book" /></td>
+											</tr>
+											<tr>
+												<td class="tc">2</td>
+												<td class="tc">1</td>
+												<td class="tr"><span class="price">$41.99</span></td>
+												<td class="tl"><input type="submit" class="radius" value="Book" /></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr class="dashed">
+								<td class="w12 padded"><b class="big">Suite</b><br /><small><a href="#" onclick="$('#roomid_2').toggle(); return false;">Details &raquo;</a></small></td>
+								<td class="w12 padded tr">price from (person/day): <span class="price"><em>$39.99</em></span></td>
+							</tr>
+							<tr style="display:none;" id="roomid_2" class="oddbox">
+								<td class="padded" colspan="2">
+									<p class="small">
+										<a class="previewimg nyroModal" title="Hotel Name: Suite" href="img/hotels/room-2.jpg"><img src="img/hotels/room-2t.jpg" alt="" class="fl" /></a>
+										<b>Room Facilities:</b> Shower, Bath, Safety Deposit Box, TV, Telephone, Air Conditioning, Balcony, Radio, Toilet, Satellite TV, Cable TV, Tea/Coffee Maker, Hairdryer, Iron, Refrigerator, Work Desk, DVD Player, Microwave, Dishwasher, Washing Machine, Kitchen<br />
+										<b>Room Size:</b> 110 square metres<br />
+										<b>Bed Size(s):</b> 1 Extra large double bed
+									</p>
+									<hr class="thin" />
+									<b>Bed and breakfast (person/day)</b>
+									<table class="full roomlist">
+										<thead>
+											<tr>
+												<th class="tc w14">Persons</th>
+												<th class="tc w14">Days</th>
+												<th class="tc w12" colspan="2">Rate</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="tc">1</td>
+												<td class="tc">1</td>
+												<td class="tr"><span class="price">$49.99</span></td>
+												<td class="tl"><input type="submit" class="radius" value="Book" /></td>
+											</tr>
+											<tr>
+												<td class="tc">2</td>
+												<td class="tc">1</td>
+												<td class="tr"><span class="price">$41.99</span></td>
+												<td class="tl"><input type="submit" class="radius" value="Book" /></td>
+											</tr>
+										</tbody>
+									</table>
+									<b>Half board (person/day)</b>
+									<table class="full roomlist">
+										<thead>
+											<tr>
+												<th class="tc w14">Persons</th>
+												<th class="tc w14">Days</th>
+												<th class="tc w12" colspan="2">Rate</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="tc">1</td>
+												<td class="tc">1</td>
+												<td class="tr"><span class="price">$49.99</span></td>
+												<td class="tl"><input type="submit" class="radius" value="Book" /></td>
+											</tr>
+											<tr>
+												<td class="tc">2</td>
+												<td class="tc">1</td>
+												<td class="tr"><span class="price">$41.99</span></td>
+												<td class="tl"><input type="submit" class="radius" value="Book" /></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="padded"><b>You will pay in the hotel's preferred currency (AED) after your stay at the hotel. The exchange rate is subject to fluctuations.</b></p>
+					
+					<!-- Hotel Facilities -->
+					<h6>Hotel Facilities</h6>
+					<table class="full">
+						<tbody>
+							<tr>
+								<td class="w14 padded"><b>General</b></td>
+								<td class="w34 padded">Restaurant, Bar, 24-Hour Front Desk, Newspapers, Terrace, Non-Smoking Rooms, Rooms/Facilities for Disabled Guests, Elevator, Express Check-In/Check-Out, Safety Deposit Box, Soundproofed Rooms, Design Hotel, Baggage Storage, Ski Storage, Airconditioning.</td>
+							</tr>
+							<tr class="dashed">
+								<td class="w14 padded"><b>Activities</b></td>
+								<td class="w34 padded">Tennis Court, Sauna, Fitness Center, Golf Course (within 2 miles), Skiing, Spa &amp; Health Club, Massage, Ski School, Outdoor Swimming Pool. </td>
+							</tr>
+							<tr class="dashed">
+								<td class="w14 padded"><b>Services</b></td>
+								<td class="w34 padded">Room Service, Meeting/Banquet Facilities, Airport Shuttle, Business Center, Babysitting/Child Services, Laundry, Dry Cleaning, Barber/Beauty Shop, VIP Room Facilities, Breakfast in the Room, Ironing Service, Currency Exchange, Shoe Shine, Car Rental, Tour Desk, Fax/Photocopying. </td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- End of Hotel Facilities -->
+					
+					<!-- Hotel Policies -->
+					<h6>Hotel Policies</h6>
+					<table class="full">
+						<tbody>
+							<tr>
+								<td class="w14 padded"><b>Check-in</b></td>
+								<td class="w34 padded">From 15:00 hours </td>
+							</tr>
+							<tr class="dashed">
+								<td class="w14 padded"><b>Check-out</b></td>
+								<td class="w34 padded">Until 12:00 hours </td>
+							</tr>
+							<tr class="dashed">
+								<td class="w14 padded"><b>Pets</b></td>
+								<td class="w34 padded">Pets are NOT allowed.</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- End of Hotel Policies -->
+					
+					<!-- Important Information -->
+					<h6>Important Information</h6>
+					<div class="padded">
+						<p>A security deposit or pre-authorization on the credit card is taken upon arrival. Full payment of the stay is required upon departure or during the stay. Late check-out fees apply after 12pm.</p>
+						<p>Transportation to/from the airport can be arranged at an additional cost in a luxury limousine with prior request.</p>
+						<p>Some nationalities can get an entry permit stamped in their passport upon arrival at the airport. Please check your visa requirements before traveling.</p>
+						<p>This hotel can arrange a visa for you after your reservation is made. Please contact them via phone or email (details provided in your confirmation).</p>
+					</div>
+					<!-- End of Important Information -->
+					
+				</div>
+			</div>
+			<!-- End of Tab 1: Hotel Overview -->
+			
+			<!-- Tab 2: Guest Review -->
+			<div id="tabs-2">
+				<div class="padded">
+					<table class="full">
+						<tbody>
+							<tr>
+								<td class="w14 tc">
+									<div class="box radius padded tc score">Total Score<br /><b class="color-green">8.40</b></div>
+								</td>
+								<td class="w34">
+									<!-- Progress bars -->
+									<table class="full">
+										<tbody>
+											<tr>
+												<td class="tr">Clean&nbsp;</td>
+												<td><div class="progress progress-green"><span style="width:88%"><b>8.80</b></span></div></td>
+											</tr>
+											<tr>
+												<td class="tr">Comfort&nbsp;</td>
+												<td><div class="progress progress-green"><span style="width:88%"><b>8.80</b></span></div></td>
+											</tr>
+											<tr>
+												<td class="tr">Location&nbsp;</td>
+												<td><div class="progress progress-green"><span style="width:89%"><b>8.90</b></span></div></td>
+											</tr>
+											<tr>
+												<td class="tr">Services&nbsp;</td>
+												<td><div class="progress progress-green"><span style="width:86%"><b>8.60</b></span></div></td>
+											</tr>
+											<tr>
+												<td class="tr">Staff&nbsp;</td>
+												<td><div class="progress progress-yellow"><span style="width:74%"><b>7.40</b></span></div></td>
+											</tr>
+											<tr>
+												<td class="tr">Value for money&nbsp;</td>
+												<td><div class="progress progress-red"><span style="width:71%"><b>7.10</b></span></div>	</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- End of Progress bars -->
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<!-- Guest Reviews -->
+					<h6>Individual Guest Reviews (32)</h6>
+					
+					<hr class="thin" />
+					<div class="padded">
+						<table class="full">
+							<tbody>
+								<tr>
+									<td class="w14 padded">
+										<b>Guest1</b><br/><small>July 20, 2010</small>
+									</td>
+									<td class="w12 padded">
+										<p class="comment_good">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<p class="comment_bad">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									</td>
+									<td class="w14 tc padded">
+										<span class="baloon-green"><b>9.00</b></span>
+									</td>
+								</tr>
+								<tr class="dashed">
+									<td class="w14 padded">
+										<b>Guest2</b><br/><small>July 19, 2010</small>
+									</td>
+									<td class="w12 padded">
+										<p class="comment_good">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<p class="comment_bad">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									</td>
+									<td class="w14 tc padded">
+										<span class="baloon-red"><b>7.50</b></span>
+									</td>
+								</tr>
+								<tr class="dashed">
+									<td class="w14 padded">
+										<b>Guest3</b><br/><small>July 19, 2010</small>
+									</td>
+									<td class="w12 padded">
+										<p class="comment_good">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<p class="comment_bad">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									</td>
+									<td class="w14 tc padded">
+										<span class="baloon-green"><b>9.00</b></span>
+									</td>
+								</tr>
+								<tr class="dashed">
+									<td class="w14 padded">
+										<b>Guest4</b><br/><small>July 10, 2010</small>
+									</td>
+									<td class="w12 padded">
+										<p class="comment_good">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<p class="comment_bad">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									</td>
+									<td class="w14 tc padded">
+										<span class="baloon-red"><b>7.50</b></span>
+									</td>
+								</tr>
+								<tr class="dashed">
+									<td class="w14 padded">
+										<b>Guest5</b><br/><small>July 10, 2010</small>
+									</td>
+									<td class="w12 padded">
+										<p class="comment_good">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<p class="comment_bad">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									</td>
+									<td class="w14 tc padded">
+										<span class="baloon-green"><b>10.00</b></span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- End of Guest Reviews -->
+					
+					<hr class="thin" />
+					<p><span class="fr"><a href="#">Next page &gt;</a></span><a href="#">&lt; Previous page</a></p>
+				</div>
+			</div>
+			<!-- End of Tab 2: Guest Review -->
+			
+			<!-- Tab 3: Google map -->
+			<div id="maptab">
+				<div id="map_canvas" style="height:310px;"></div>
+				<div id="pano" style="height: 310px;"></div>
+			</div>
+			<!-- End of Tab 3: Google map -->
+
+		</div> 
+		<!-- End of Tabs -->
+		
+		<!-- Shortcut buttons -->
+		<div class="fr">
+			<button class="box radius" title="Print this page" onclick="window.print();"><img src="img/print.gif" alt="Print" /></button>
+			<button class="box radius" title="Email to a friend"><img src="img/email.gif" alt="Email" /></button>
+			<button class="box radius" title="Bookmark"><img src="img/bookmark.gif" alt="Bookmark" /></button>
+		</div>
+		<!-- End of Shortcut buttons -->
+		
+		<div class="clear">&nbsp;</div>
+		<p>&nbsp;</p>
+		
+	</div>
+	<div class="clear">&nbsp;</div>
+	
+</div>
+<!-- End of Right column -->

@@ -33,10 +33,10 @@ a:hover {
 }
 
 h2.headline {
-	background:#75CA4B;
+	background:#62BA37;
 	box-shadow:0px 2px 0px #62BA37;
-	-moz-box-shadow:0 2px 0 #823CB4;
-	-webkit-box-shadow:0 2px 0 #823CB4;
+	-moz-box-shadow:0 2px 0 #75CA4B;
+	-webkit-box-shadow:0 2px 0 #75CA4B;
 }
 
 #logo {
