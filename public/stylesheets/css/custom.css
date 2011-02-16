@@ -7,3 +7,7 @@ update the template. Simply copy an existing style from style.css to
 this file, and modify it to your liking. 
 
 */
+#logo {
+	height:70px;
+	background: url(../../images/logo_small_2.png) no-repeat;
+}
