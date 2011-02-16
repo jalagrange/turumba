@@ -3,45 +3,49 @@
 <% end %>
 
 <%= form_for(@service, :html => { :multipart => true }) do |f| %>
-  <% if @service.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
-
-      <ul>
-      <% @service.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<div class="field">
-	
-<%= f.file_field :logo %>
-</div>  
-<div class="field">
-    <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :descripcion %><br />
-    <%= f.cktext_area :descripcion, :toolbar=>'Full', :width=>'400px', :height=>'200px' %>
-  </div>
- <div class="field">
-   <% for category in Category.all%>
-	<%= check_box_tag "service[category_ids][]", category.id, @service.categories.include?(category)%>
-	<%= category.name%>
-	<% end %>
-  </div>
+<div class="box radius padded">
+	<fieldset class="radius">
+		<p>
+			<%= f.label :logo %><br />
+			<%= f.file_field :logo %>
+		</p>
+	</fieldset>
+	<fieldset class="radius">
+		<p>
+			<%= f.label :nombre %><br />
+			<%= f.text_field :nombre %>
+		</p>
+	</fieldset>
+	<fieldset class="radius">
+		<p>
+			<%= f.label :descripcion %><br />
+			<%= f.cktext_area :descripcion, :toolbar=>'Full', :width=>'400px', :height=>'200px' %>
+		</p>
+	</fieldset>
+	<fieldset class="radius">
+		<ul>
+			<% for category in Category.all%>
+			<li>
+				<%= check_box_tag "service[category_ids][]", category.id, @service.categories.include?(category)%>
+				<%= category.name%>
+			</li>
+			<% end %>
+		</ul>
+	</fieldset>
   
   <%@service.images.each do |img|%>
+
   <%= image_tag(img.data.url(:thumb))%>
+
   <%end %>
   
   <%=f.fields_for :images do |builder|%>
 	<%=render "image_fields", :f =>builder%>
   <% end %>
   <p><%= link_to_add_fields "Add Image", f, :images %></p>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+<hr class="thin" />
+	<%= submit_tag "", :value => "► Save & Proceed", :class => "btn btn-custom radius fr" %>
+	
+  
 <% end %>

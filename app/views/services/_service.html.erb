@@ -1,0 +1,36 @@
+<div class="infopanel padded">
+		<a class="previewimg nyroModal fl" href="img/hotels/room-1.jpg" title="Hotel Name"><%= image_tag service.logo.url(:thumb) %></a>
+		<small class="fr tr"><a href="#">13 reviews</a><br /><b>6.9</b> / 10</small>
+		<h3><%= link_to service.nombre, service %> <img src="img/star.png" alt="*" /><img src="img/star.png" alt="*" /><img src="img/star.png" alt="*" /><img src="img/star.png" alt="*" /></h3>
+		<div class="address">Address, City [ <a href="#">Show on map</a> ]</div>
+		<p><%= service.descripcion %> <a href="#">more &raquo;</a></p>
+		<table class="roomlist full">
+			<thead>
+				<tr>
+					<th class="tl w13">Available room types</th>
+					<th class="tc w13">Persons</th>
+					<th class="tr w13">Rate</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><a href="#">Single room</a> <span class="label labelred">Last room</span></td>
+					<td class="tc">1</td>
+					<td class="tr">from <strong class="price">$59.99</strong></td>
+				</tr>
+				<tr>
+					<td><a href="#">Double room</a></td>
+					<td class="tc">2</td>
+					<td class="tr">from <strong class="price">$74.99</strong></td>
+				</tr>
+				<tr>
+					<td><a href="#">Twin room</a></td>
+					<td class="tc">2</td>
+					<td class="tr">from <strong class="price">$74.99</strong></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="clear">&nbsp;</div>
+	</div>
+	<hr class="thin"/>
+	

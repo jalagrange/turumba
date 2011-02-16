@@ -1,5 +1,122 @@
-<h1>Nuevo servicio</h1>
+<% content_for :head do%>
+<%= javascript_include_tag :ckeditor %>
+<% end %>
 
-<%=render "form"%>
+
 
 <%= link_to 'Regresar', services_path %>
+
+
+<!-- Left column: Checkout Steps -->
+<div class="grid_8">
+	<!-- Steps -->
+	<table class="full">
+		<tbody>
+			<tr>
+				<td class="w13">
+					<!-- Selected/stepped -->
+					<div class="steps stepped radius-left">
+						<h4>Step 1.</h4>
+						Nuevo Servicio
+					</div>
+					<div class="triangle"></div>
+				</td>
+				<td class="w13">
+					<div class="steps">
+						<h4>Step 2.</h4>
+						Rooms &amp; Guest Details
+					</div>
+				</td>
+				<td class="w13">
+					<div class="steps radius-right">
+						<h4>Step 3.</h4>
+						Confirmation
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- End of Steps -->
+	
+		<% if @service.errors.any? %>
+		    	<div class="alert">
+		      <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+		      <ul>
+		      <% @service.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+
+	<!-- Checkout form -->
+	
+		<%=render "form"%>
+	
+	<!-- End of Checkout form -->
+</div>
+<!-- End of Left column: Checkout Steps -->
+
+<!-- Right column: Charges -->
+<div class="grid_4">
+	<div class="infopanel">			
+		<h6>Room Charges</h6>
+		<h3><a href="#">Hotel Name ****</a></h3>
+		<table class="full">
+			<tbody>
+				<tr>
+					<td><b>Room:</b></td>
+					<td>Superior Double Room</td>
+				</tr>
+				<tr>
+					<td><b>Adults:</b></td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td><b>Children:</b></td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td><b>Check-in:</b></td>
+					<td>Saturday, August 7, 2010</td>
+				</tr>
+				<tr>	
+					<td><b>Check-out:</b></td>
+					<td>Sunday, August 8, 2010</td>
+				</tr>
+				<tr>
+					<td><b>Nights:</b></td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td><b>Total room price:</b></td>
+					<td><b>$25.00</b></td>
+				</tr>
+			</tbody>
+		</table>
+		<h6>Total Charges</h6>
+		<table class="full">
+			<tbody>
+				<tr>
+					<td>Room Subtotal:</td>
+					<td class="tr">$25.00</td>
+				</tr>
+				<tr>
+					<td>Tax &amp; Fees:</td>
+					<td class="tr">$3.20</td>
+				</tr>
+				<tr>
+					<td colspan="2"><hr class="thin" /></td>
+				</tr>
+				<tr>
+					<td><b>TOTAL:</b></td>
+					<td class="tr"><span class="color-green big"><b>$28.20</b></span></td>
+				</tr>
+			</tbody>
+		</table>
+		<h6>Cancellation Policy</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>
+<!-- End of Right column: Charges -->

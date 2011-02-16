@@ -1,24 +1,217 @@
-<h1>Servicios</h1>
 
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Descripción</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+	<!-- Left column -->
+	<div class="grid_4" id="leftcolumn">
+		<div class="box radius">
+			<!-- Search form -->
+			<div class="padded">
+				<h2 class="headline radius"><b>Search</b> Services</h2>
+				<form name="booking" method="get" action="">
+					<!-- calendar image container -->
+					<span style="display:none;"><img class="trigger" id="trigger" alt="" src="img/blank.gif" /></span>
+					<fieldset class="radius">
+						<p>
+							<label class="" for="destination">Where are you going?</label><br/>
+							<input type="text" id="destination" class="full" value="" name="destination"/>
+						</p>
+						<p>
+							<label class="" for="startdate">Check in</label><br/>
+							<input type="text" id="startdate" class="" value="" name="startdate"/>
+							<input type="hidden" name="sd_timestamp" id="sd_timestamp" />
+						</p>
+						<p>
+							<label class="" for="enddate">Check out</label><br/>
+							<input type="text" id="enddate" class="" value="" name="enddate"/>
+							<input type="hidden" name="ed_timestamp" id="ed_timestamp" /> <span class="nights"></span>
+						</p>
+						<p><input type="checkbox" id="flexible" class="" value="1" name="flexible"/> <label class="choice" for="flexible">My dates are flexible</label></p>
+						<p>
+							<label class="" for="adults">How many people?</label><br/>
+							Adults <select id="adults" name="adults">
+								<option value="1" selected="selected">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+							Children <select id="children" name="children">
+								<option value="0" selected="selected">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</p>
+						<hr class="thin" />
+						<p>
+							<label class="" for="sortOrder">Sorted by</label><br/>
+							<select id="sortOrder" name="sortOrder">
+								<option title="Sort by price - low to high" value="PRICE_ASC">Price - low to high</option>
+								<option title="Sort by price - low to high" value="PRICE_DESC">Price - high to low</option>
+								<option title="Sort by star rating - high to low" value="STAR_RATING_DESC">Star rating - high to low</option>
+								<option title="Sort by star rating - low to high" value="STAR_RATING_ASC">Star rating - low to high</option>
+								<option title="Sort by guest rating" value="GUEST_RATING_ASC">Guest rating</option>
+							</select>
+						</p>
+						<input type="submit" class="btn btn-custom radius fr" value="Search &raquo;" />
+					</fieldset>
+				</form>
+			</div>
+			<!-- End of Search form -->
+			
+			<!-- Refine your search boxes -->
+			<div class="padded">
+				<h2 class="gray radius">Refine your search:</h2>
 
-<% @services.each do |service| %>
-  <tr>
-	<td><%= image_tag service.logo.url(:thumb) %></td>
-    <td><%= link_to service.nombre, service %></td>
-    <td><%= link_to 'Editar', edit_service_path(service) %></td>
-    <td><%= link_to 'Eliminar', service, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+				<div class="content-box radius">
+					<div class="header">Stars</div>
+					<div class="section">
+						<table class="full">
+							<tbody>
+								<tr>
+									<td><a href="#">1 *</a></td>
+									<td class="tr"><small>11 hotels</small></td>
+								</tr>
+								<tr>
+									<td><a href="#">2 **</a></td>
+									<td class="tr"><small>2 hotels</small></td>
+								</tr>
+								<tr>
+									<td><a href="#">3 ***</a></td>
+									<td class="tr"><small>21 hotels</small></td>
+								</tr>
+								<tr class="selected">
+									<td>4 ****</td>
+									<td class="tr"><a href="#" title="uncheck">x</a></td>
+								</tr>
+								<tr>
+									<td><a href="#">5 *****</a></td>
+									<td class="tr"><small>3 hotels</small></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="content-box radius">
+					<div class="header">Price Range ($)</div>
+					<div class="section">
+						<table class="full">
+							<tbody>
+								<tr>
+									<td><a href="#">0 - 49</a></td>
+									<td class="tr"><small>3 hotels</small></td>
+								</tr>
+								<tr class="selected">
+									<td>50 - 99</td>
+									<td class="tr"><a href="#" title="uncheck">x</a></td>
+								</tr>
+								<tr>
+									<td><a href="#">100 - 149</a></td>
+									<td class="tr"><small>2 hotels</small></td>
+								</tr>
+								<tr>
+									<td><a href="#">150 - 199</a></td>
+									<td class="tr"><small>12 hotels</small></td>
+								</tr>
+								<tr>
+									<td><a href="#">200+</a></td>
+									<td class="tr"><small>11 hotels</small></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="content-box radius">
+					<div class="header">Hotel Type</div>
+					<div class="section">
+						<table class="full">
+							<tbody>
+								<tr>
+									<td><a href="#">Apartment</a></td>
+									<td class="tr"><small>1 hotel</small></td>
+								</tr>
+								<tr>
+									<td><a href="#">Guest accommodation</a></td>
+									<td class="tr"><small>51 hotels</small></td>
+								</tr>
+								<tr>
+									<td><a href="#">Hotel</a></td>
+									<td class="tr"><small>29 hotels</small></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- End of Refine your search boxes -->
 
-<br />
+			
+		</div>
+		<div class="">&nbsp;</div>
+		
+	
+	</div>
+	<!-- End of Left column -->
+	
+	<!-- Right column -->
+	<div class='grid_8 searchpanel'>
+		<h1>Servicios</h1>
 
-<%= link_to 'Nuevo Servicio', new_service_path %>
+		<table>
+		  <tr>
+		    <th>Nombre</th>
+		    <th>Descripción</th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+
+		
+		  <tr>
+		
+		
+		  </tr>
+		
+		</table>
+
+		<br />
+		<%= link_to 'Nuevo Servicio', new_service_path %>
+		<h3 class="">81 Hotels found, 48 Available</h3>
+		
+		<p><span class="fr"><a href="#">&lt; Previous page</a> | <a href="#">Next page &gt;</a></span> <b>Showing 1 – 10</b></p>
+		<p class="box padded">
+			Sort by: <b>price (low to high)</b> &middot; <a href="#">price (high to low)</a> &middot; <a href="#">popularity</a> &middot; <a href="#">stars (1..5)</a> &middot;  <a href="#">stars (5..1)</a> &middot; <a href="#">review score</a>
+		</p>
+		
+		<!-- Search item -->
+		
+	<%= render @services %>
+
+		<!-- End of Search item -->
+		
+		
+	
+
+		<p class="box padded"><span class="fr"><a href="#">Next page &gt;</a></span><a href="#">&lt; Previous page</a></p>
+		
+		<p>&nbsp;</p>
+		<!-- Shortcut buttons -->
+		<div class="fr">
+			<button class="box radius" title="Print this page" onclick="window.print();"><img src="img/print.gif" alt="Print" /></button>
+			<button class="box radius" title="Email to a friend"><img src="img/email.gif" alt="Email" /></button>
+			<button class="box radius" title="Bookmark"><img src="img/bookmark.gif" alt="Bookmark" /></button>
+		</div>
+		<!-- End of Shortcut buttons -->
+		
+		<div class="clear">&nbsp;</div>
+	
+	</div>
+	
+	<p>&nbsp;</p>
+	<div class="clear">&nbsp;</div>
+	
+</div>

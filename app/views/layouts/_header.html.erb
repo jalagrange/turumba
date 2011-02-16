@@ -17,7 +17,7 @@
 				</select>
 				<!-- Theme switcher - only for theme demonstration - can be removed -->
 				<select class="smallselect" name="style" id="style" onchange="chooseStyle(this.value, 60);">
-					<option value="none">CSS: Default</option>
+					<option value="green">CSS: Default</option>
 					<option value="orange">CSS: Orange</option>
 					<option value="pink">CSS: Pink</option>
 					<option value="red">CSS: Red</option>
@@ -33,9 +33,9 @@
 		<!-- Main navigation -->
 		<div class="radius" id="navigation">
 			<ul id="nav">
-				<li class="current_page_item"><a href="#" title="Home">Home</a></li>
+				<li class="current_page_item"><%= link_to "Home", root_path%></li>
 				<li class="">
-					<a title="Destinations" href="#">Destinations</a>
+					<%= link_to "Categories", categories_path%>
 					<!-- Dropdown menu -->
 					<div class="dropdown_submenu tripple">
 						<ul>
