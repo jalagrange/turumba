@@ -1,25 +1,88 @@
-<h1>Listing categories</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @categories.each do |category| %>
-  <tr>
-    <td><%= category.name %></td>
-    <td><%= category.description %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
 <%= link_to 'New Category', new_category_path %>
+
+	<div class="grid_12">
+		<!-- Breadcrumb -->
+		<div class="breadcrumb"><a href="#">Home</a> &gt; <a href="#">Destinations</a> &gt; <a href="#">Hotels in <b>North America</b></a> &gt; Hotels in <b>Unites States of America</b></div>
+		<div class="padded infopanel">
+			<h1>Browse Categories</h1>
+			<h2>Hotels in United States of America</h2>
+			<p><b>United States of America</b> hotels - We offer great last-minute deals and discount rates on hotels in <b>United States of America</b>. Our hotels in <b>United States of America</b> can easily be booked online. Our fast online search facility allows you to:</p>
+			<ol>
+				<li>Find and compare different hotels in <b>United States of America</b> by star rating, popularity or guest review</li>
+				<li>Securely book your hotel room online today</li>
+				<li>Receive email and text confirmations with reservation details of your online hotel booking </li>
+			</ol>
+			
+			<!-- States -->
+			<h6>States in United States of America</h6>
+			<table class="full">
+				<tbody>
+					<tr>
+						<td class="w13">
+							<ul>
+								<% @categories.each do |category| %>
+								<li>
+									<%= link_to category.name, category %>
+										<p>
+											<%= link_to 'Edit', edit_category_path(category) %> | 
+											<%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %>
+										</p>
+								</li>
+								<% end %>
+							</ul>
+						</td>
+						<td class="w13">
+							<ul>
+								<li><a href="">Kentucky</a></li>
+								<li><a href="">Louisiana</a></li>
+								<li><a href="">Maine</a></li>
+								<li><a href="">Maryland</a></li>
+								<li><a href="">Massachusetts</a></li>
+								<li><a href="">Michigan</a></li>
+								<li><a href="">Minnesota</a></li>
+								<li><a href="">Mississippi</a></li>
+								<li><a href="">Missouri</a></li>
+								<li><a href="">Montana</a></li>
+								<li><a href="">Nebraska</a></li>
+								<li><a href="">Nevada</a></li>
+								<li><a href="">New Hampshire</a></li>
+								<li><a href="">New Jersey</a></li>
+								<li><a href="">New Mexico</a></li>
+								<li><a href="">New York State</a></li>
+								<li><a href="">North Carolina</a></li>
+							</ul>
+						</td>
+						<td class="w13">
+							<ul>
+								<li><a href="">North Dakota</a></li>
+								<li><a href="">Ohio</a></li>
+								<li><a href="">Oklahoma</a></li>
+								<li><a href="">Oregon</a></li>
+								<li><a href="">Pennsylvania</a></li>
+								<li><a href="">Rhode Island</a></li>
+								<li><a href="">South Carolina</a></li>
+								<li><a href="">South-Dakota</a></li>
+								<li><a href="">Tennessee</a></li>
+								<li><a href="">Texas</a></li>
+								<li><a href="">Utah</a></li>
+								<li><a href="">Vermont</a></li>
+								<li><a href="">Virginia</a></li>
+								<li><a href="">Washington State</a></li>
+								<li><a href="">West Virginia</a></li>
+								<li><a href="">Wisconsin</a></li>
+								<li><a href="">Wyoming</a></li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- End of States -->
+			
+		</div>
+	</div>
+	<!-- End of Main page -->
+ 
+	<p>&nbsp;</p>
+	<div class="clear">&nbsp;</div>
+	
+</div>

@@ -1,17 +1,35 @@
-<h2>Sign in</h2>
+<!-- Left column: Checkout Steps -->
+<div class="grid_8">
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
+<h1>Sign in</h1>
+	<!-- Checkout form -->
+	<div class="box radius padded">
+		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+		<%= devise_error_messages! %>
+		<fieldset class="radius">
+			<p>
+				<%= f.label :email %><br />
+				<%= f.text_field :email %>
+			</p>	
+			<p><%= f.label :password %><br />
+				<%= f.password_field :password %>
+			</p>
+		
+			<% if devise_mapping.rememberable? -%>
+				<p>
+					<%= f.check_box :remember_me %> <%= f.label :remember_me %>
+				</p>
+			<% end -%>
+		</fieldset>
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+		
+		<%= render :partial => "devise/shared/links" %>
+		<p><%= f.submit "Sign in", :class => "btn btn-custom radius fr" %></p>
+		<% end %>
+	</div>
+	
+	<!-- End of Checkout form -->
+</div>
+<!-- End of Left column: Checkout Steps -->
 
-  <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
-  <% end -%>
-
-  <p><%= f.submit "Sign in" %></p>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+<%= render :partial => 'shared/form_right_column' %>

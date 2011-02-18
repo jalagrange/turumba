@@ -1,18 +1,61 @@
-<h2>Sign up</h2>
+<!-- Left column: Checkout Steps -->
+<div class="grid_8">
+	<!-- Steps -->
+	<table class="full">
+		<tbody>
+			<tr>
+				<td class="w13">
+					<!-- Selected/stepped -->
+					<div class="steps stepped radius-left">
+						<h4>Sign up</h4>
+						Ingrese un email y password
+						
+					</div>
+					<div class="triangle"></div>
+				</td>
+				<td class="w13">
+					<div class="steps">
+						<h4>Step 2.</h4>
+						Rooms &amp; Guest Details
+					</div>
+				</td>
+				<td class="w13">
+					<div class="steps radius-right">
+						<h4>Step 3.</h4>
+						Confirmation
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- End of Steps -->
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+	<!-- Checkout form -->
+	<div class="box radius padded">
+		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+		<%= devise_error_messages! %>
+		<fieldset class="radius">
+			<p>
+				<%= f.label :email %><br />
+				<%= f.text_field :email %>
+			</p>	
+			<p><%= f.label :password %><br />
+				<%= f.password_field :password %>
+			</p>
+			<p>
+				<%= f.label :password_confirmation %><br />
+				<%= f.password_field :password_confirmation %>
+			</p>
+		</fieldset>
 
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
+		
+		<%= render :partial => "devise/shared/links" %>
+		<p><%= f.submit "Sign up", :class => "btn btn-custom radius fr" %></p>
+		<% end %>
+	</div>
+	
+	<!-- End of Checkout form -->
+</div>
+<!-- End of Left column: Checkout Steps -->
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
-
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
-
-  <p><%= f.submit "Sign up" %></p>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+<%= render :partial => 'shared/form_right_column' %>

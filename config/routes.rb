@@ -5,7 +5,12 @@ Turumba::Application.routes.draw do
   resources :categories
   resources :services
   
-  root :to => 'services#index'
+  resources :info do
+    get 'contact', :on=>:collection
+    get 'home', :on=>:collection
+  end
+  
+  root :to => 'info#home'
 
   
 end

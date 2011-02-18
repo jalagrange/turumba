@@ -4,29 +4,15 @@
 		
 		<!-- Aside menu -->
 		<div id="topmenu" class="tr">
-			<form method="get" action="">
-				<select class="smallselect" name="lang" id="lang" onchange="$(this).parent().submit();">
-					<option value="en" selected="selected">English</option>
-					<option value="de">Deutch</option>
-					<option value="es">Español</option>
-				</select>
-				<select class="smallselect" name="currency" id="currency" onchange="$(this).parent().submit();">
-					<option value="usd" selected="selected">US Dollar (US$)</option>
-					<option value="eur">Euro (&euro;)</option>
-					<option value="gbp">Pound sterling (&pound;)</option>
-				</select>
-				<!-- Theme switcher - only for theme demonstration - can be removed -->
-				<select class="smallselect" name="style" id="style" onchange="chooseStyle(this.value, 60);">
-					<option value="green">CSS: Default</option>
-					<option value="orange">CSS: Orange</option>
-					<option value="pink">CSS: Pink</option>
-					<option value="red">CSS: Red</option>
-					<option value="blue">CSS: Blue</option>
-					<option value="brown">CSS: Brown</option>
-					<option value="cyan">CSS: Cyan</option>
-					<option value="purple">CSS: Purple</option>
-				</select>
-			</form>
+			<% if user_signed_in? %>
+				<%= link_to "Log out", destroy_user_session_path %> | 
+			<% else %>
+				<%= link_to "Sign in", new_user_session_path %> | 
+			<% end%>
+			<%= link_to "Registrate", new_user_registration_path %>
+			
+			
+			
 		</div>
 		<!-- End of Aside menu -->
 		
@@ -69,10 +55,10 @@
 					</div>				
 					<!-- End of Dropdown menu -->
 				</li>
-				<li class=""><a title="Hotel Guides" href="#">Hotel Guides</a></li>
+				<li class=""><%= link_to "Services", services_path%></li>
 				<li class=""><a title="Vacation Ideas" href="#">Vacation Ideas</a></li>
 				<li class="separator">&nbsp;</li>
-				<li class=""><a title="My Bookings" href="#">My Bookings</a></li>
+				<li class=""><%= link_to "Contact", contact_info_index_path%></li>
 				<li class="separator">&nbsp;</li>
 				<li class="">
 					<a title="My Bookings" href="#">Sample Pages</a>

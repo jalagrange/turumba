@@ -1,0 +1,181 @@
+<div class='grid_4'>
+	<div class="box radius fixheight">
+		<div class="padded">
+			<h2 class="headline radius"><b>Search</b> Hotels</h2>
+			<form name="booking" method="get" action="">
+				<!-- calendar image container -->
+				<span style="display:none;"><img class="trigger" id="trigger" alt="" src="img/blank.gif" /></span>
+				<fieldset class="radius">
+					<p>
+						<label class="" for="destination">Where are you going?</label><br/>
+						<input type="text" id="destination" class="full" value="" name="destination"/>
+					</p>
+					<p>
+						<label class="" for="startdate">Check in</label><br/>
+						<input type="text" id="startdate" class="" value="" name="startdate"/>
+						<input type="hidden" name="sd_timestamp" id="sd_timestamp" />
+					</p>
+					<p>
+						<label class="" for="enddate">Check out</label><br/>
+						<input type="text" id="enddate" class="" value="" name="enddate"/>
+						<input type="hidden" name="ed_timestamp" id="ed_timestamp" /> <span class="nights"></span>
+					</p>
+					<p><input type="checkbox" id="flexible" class="" value="1" name="flexible"/> <label class="choice" for="flexible">My dates are flexible</label></p>
+					<p>
+						<label class="" for="adults">How many people?</label><br/>
+						Adults <select id="adults" name="adults">
+							<option value="1" selected="selected">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+						Children <select id="children" name="children">
+							<option value="0" selected="selected">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+					</p>
+					<hr class="thin" />
+					<p>
+						<label class="" for="sortOrder">Sorted by</label><br/>
+						<select id="sortOrder" name="sortOrder">
+							<option title="Sort by price - low to high" value="PRICE_ASC">Price - low to high</option>
+							<option title="Sort by price - low to high" value="PRICE_DESC">Price - high to low</option>
+							<option title="Sort by star rating - high to low" value="STAR_RATING_DESC">Star rating - high to low</option>
+							<option title="Sort by star rating - low to high" value="STAR_RATING_ASC">Star rating - low to high</option>
+							<option title="Sort by guest rating" value="GUEST_RATING_ASC">Guest rating</option>
+						</select>
+					</p>
+					<input type="submit" class="btn btn-custom radius fr" value="Search &raquo;" />
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- End of Search form -->
+
+<!-- Carousel -->
+<div class='grid_4'>
+	<div class="carousel">
+		<a class="previous" href="#">&lt;</a>
+		<ul>
+			<li>
+				<%= image_tag "img/carousel/promotion-1.png"%><br />
+				<h4><a href="#">Book now &raquo;</a></h4>
+			</li>
+			<li>
+				<%= image_tag "img/carousel/carousel-1.jpg"%><br />
+				<h4><a href="#">Monte Carlo on Sale! <br/><small>Stay 10 nights. Get 1 free!</small></a></h4>
+			</li>
+			<li>
+				<%= image_tag "img/carousel/carousel-2.jpg"%><br />
+				<h4><a href="#">Venice on Sale! <br /><small>as low as &euro;49</small></a></h4>
+			</li>
+			<li>
+				<%= image_tag "img/carousel/carousel-3.jpg"%><br />
+				<h4><a href="#">Cairo on Sale! <br /><small>Save up to 40%</small></a></h4>
+			</li>
+		</ul>
+		<a class="next" href="#">&gt;</a>
+	</div>
+</div>
+<!-- End of Carousel -->
+
+<!-- Top destinations -->
+<div class='grid_4'>
+	<div class="box radius fixheight">
+		<div class="padded">
+			<h2 class="headline radius"><b>Publica</b> tu servicio</h2>
+			<div id="top-destination-panel" class="radius">
+				
+					
+					
+						<ul class="list">
+							<li><span class="fr">desde<span class="price">&euro;119</span></span><a href="#">Madrid</a></li>
+							<li><span class="fr">from <span class="price">&euro;99</span></span><a href="#">Amsterdam</a></li>
+							<li><span class="fr">from <span class="price">&euro;79</span></span><a href="#">London</a></li>
+							<li><span class="fr">from <span class="price">&euro;110</span></span><a href="#">Dubai</a></li>
+							<li><span class="fr">from <span class="price">&euro;40</span></span><a href="#">Rome</a></li>
+							<li><span class="fr">from <span class="price">&euro;90</span></span><a href="#">Las Vegas</a></li>
+							<li><span class="fr">from <span class="price">&euro;50</span></span><a href="#">Singapore</a></li>
+							<li><span class="fr">from <span class="price">&euro;60</span></span><a href="#">New York</a></li>
+						</ul>
+					
+				
+				<div class="fr tr">
+					<a href="#">Top 50 Cities &raquo;</a><br />
+					<a href="#">All countries &raquo;</a><br />
+					<a href="#">All hotels &raquo;</a>
+				</div>
+				<div class="clear">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End of Top destinations -->
+
+<div class="grid_12">&nbsp;</div>
+
+<!-- Google map -->
+<div class="grid_12">
+	<div class="box radius padded">
+		<h2 class="gray radius">Nuevos Clientes</h2>
+	</div>
+</div>
+<!-- End of Google map -->
+
+<div class="grid_12">&nbsp;</div>
+
+<!-- Info boxes -->
+<div class='grid_4'>
+	<div class="box radius">
+		<div class="padded">
+			<h2 class="gray radius">Guest Corner</h2>
+			<ul>
+				<li><a href="#">FAQ</a></li>
+				<li><a href="#">How to make a reservation?</a></li>
+				<li><a href="#">Additional information</a></li>
+				<li><a href="#">Payment options</a></li>
+				<li><a href="#">Booking tips</a></li>
+				<li><a href="#">Site feedback</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class='grid_4'>
+	<div class="box radius">
+		<div class="padded tc">
+			<h2 class="gray radius">Customer Service</h2>
+			<p class="callcenter"><small>Book online or call:</small><span>1-800-123-456789</span></p>
+			<p class="small">This call is free. 24 hours a day, 7 days a week!</p>
+			<a href="#" title="Skype Call"><img src="img/skype.png" alt="Skype Call" /></a>
+		</div>
+	</div>
+</div>
+<div class='grid_4'>
+	<div class="box radius">
+		<div class="padded">
+			<h2 class="gray radius">Newsletter</h2>
+			<p>Type in your e-mail to stay up to date with our promotions:</p>
+			<form name="login" action="">
+				<p>
+					<label class="" for="newsletter">Email</label><br/>
+					<input type="text" id="newsletter" class="full" value="" name="newsletter"/>
+				</p>
+				<input type="submit" class="btn radius fr" value="Subscribe" />
+			</form>
+		</div>
+	</div>
+</div>
+<!-- End of Info boxes -->
+
+<p>&nbsp;</p>
+<div class="clear">&nbsp;</div>

@@ -11,3 +11,8 @@ this file, and modify it to your liking.
 	height:70px;
 	background: url(../../images/logo_small_2.png) no-repeat;
 }
+
+#topmenu {
+position:relative;
+top:-50px;
+}
